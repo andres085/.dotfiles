@@ -1,0 +1,6 @@
+[user]
+	email = andresito.martinez1985@gmail.com
+	name = andres085
+
+[includeIf "gitdir:/mnt/data/Documents/Proyectos/Nvisionx/"]
+	path = ~/.gitconfig-work
