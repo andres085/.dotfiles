@@ -7,9 +7,9 @@ exec_always --no-startup-id ~/.config/i3/set_wallpapers.sh
 
 exec --no-startup-id env QT_QPA_PLATFORMTHEME=qt5ct
 
-exec --no-startup-id picom
+exec --no-startup-id picom --backend glx -b
 exec --no-startup-id systemctl --user enable --now ulauncher
-exec --no-startup-id xrandr --output HDMI-1 --left-of eDP-1 --auto
+exec_always --no-startup-id xrandr --output HDMI-A-0 --left-of eDP --auto
 
 font pango:FiraMono Nerd Font 14
 
@@ -44,7 +44,7 @@ font pango:FiraMono Nerd Font 14
 # tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -80,7 +80,7 @@ bindsym $mod+Shift+semicolon move right
 bindsym $mod+f fullscreen toggle
 
 # Lock screen
-bindsym $mod+l exec --no-startup-id i3lock -t -i ~/Pictures/peakpx.png
+bindsym $mod+l exec --no-startup-id i3lock -i ~/Pictures/block_screen.png
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
@@ -100,8 +100,8 @@ bindsym $mod+l exec --no-startup-id i3lock -t -i ~/Pictures/peakpx.png
 #bindsym $mod+d focus child
 
 # Monitor Variables Setting
-set $fm HDMI-1
-set $sm eDP-1
+set $fm HDMI-A-0
+set $sm eDP
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
